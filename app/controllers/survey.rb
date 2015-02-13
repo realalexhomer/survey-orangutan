@@ -1,6 +1,8 @@
 get '/' do
-  check_for_user
-  redirect '/surveys'
+  if check_for_user
+    redirect '/surveys'
+  end
+    erb :welcome
 end
 
 get '/surveys' do
@@ -49,8 +51,8 @@ end
 
 post '/surveys.json' do
   content_type :json
-  survey = Survey.create(params)
-  survey.to_hash.to_json
+  survey = Survey.create(params[:survey])
+  survey.to_json
 end
 
 
