@@ -15,7 +15,8 @@ get '/surveys' do
   end
 end
 
-# New survey
+# NON AJAX ROUTES #####################################################
+
 get '/surveys/new' do
   erb :'survey/new'
 end
@@ -46,3 +47,16 @@ delete '/surveys/:id' do |id|
   Survey.find(id).destroy
   redirect "/surveys"
 end
+
+#AJAX ROUTES ###########################################################
+
+post '/surveys.json' do
+  content_type :json
+  survey = Survey.create(params)
+  survey.to_hash.to_json
+end
+
+
+
+
+
