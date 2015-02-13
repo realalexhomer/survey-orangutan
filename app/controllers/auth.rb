@@ -1,6 +1,4 @@
-get '/login' do
-  erb :'auth/login'
-end
+
 
 post '/login' do
   user = User.find_by(name: params[:user][:name])
@@ -9,12 +7,8 @@ post '/login' do
     session[:user_id] = user.id
     redirect '/'
   else
-    redirect '/login'
+    redirect '/surveys'
   end
-end
-
-get '/signup' do
-  erb :'auth/signup'
 end
 
 post '/signup' do
@@ -28,7 +22,7 @@ post '/signup' do
   end
 end
 
-get '/signout' do
-  session[:user_id] = nil
+get '/logout' do
+  session.clear
   redirect '/'
 end

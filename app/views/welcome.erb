@@ -3,11 +3,11 @@
     <form action="/login" method="post">
       <div class='hr-input-field'>
         <label>username</label>
-        <input type='text' name='name' />
+        <input type='text' name='user[name]' />
       </div>
       <div class='hr-input-field'>
         <label>password</label>
-        <input type='password' name="password" />
+        <input type='password' name="user[password]" />
       </div>
       <div class='actions'>
         <input class='btn' type='submit' value='login'/>
@@ -20,15 +20,16 @@
     <form action="/users/create" method="post">
       <div class='hr-input-field'>
         <label>your username</label>
-        <input type='text' name='name' />
+        <input type='text' name='user[name]' />
       </div>
       <div class='hr-input-field'>
         <label>your email</label>
-        <input type='text' name='email' />
+        <input type='text' name='user[email]' />
       </div>
       <div class='hr-input-field'>
         <label>your password</label>
-        <input type='password' name='password' />
+        <input type='password' name='user[password]' />
+        <input type='submit' value='orangustart!' />
       </div>
     </form>
   </div>
