@@ -11,7 +11,7 @@ gem 'sinatra-contrib'
 gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 gem 'bcrypt-ruby'
-
+gem 'faker'
 gem 'rake'
 
 gem 'shotgun'
@@ -25,5 +25,4 @@ end
 
 group :test, :development do
   gem 'factory_girl'
-  gem 'faker'
 end
