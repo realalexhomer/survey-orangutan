@@ -4,17 +4,16 @@ function Question(params){
   this.title = params.title;
 }
 
-Question.prototype.toJson() {
-  return JSON.stringify( {title: this.title, id: this.id, survey_id: this.survey_id} );
-}
+// Question.prototype.toJson() {
+//   return JSON.stringify( {title: this.title, id: this.id, survey_id: this.survey_id} );
+// }
 
-Question.prototype.create() {
+Question.prototype.create = function(params){
   $.ajax({
     type : 'post',
     url  : "/surveys/" + this.survey_id + "/questions/create",
-    data : { survey_id: this.survey_id,
-             title: this.title };
-    success: function(){console.log("question created"); };
+    data : params,
+    success: function(){console.log("question created") },
     error: function(){console.log("something went wrong");}
   })
 }
