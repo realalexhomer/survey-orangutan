@@ -1,17 +1,15 @@
-
-
 post '/login' do
   user = User.find_by(name: params[:user][:name])
 
   if user.try(:authenticate, params[:user][:password])
     session[:user_id] = user.id
-    redirect '/'
-  else
     redirect '/surveys'
+  else
+    redirect '/'
   end
 end
 
-post '/signup' do
+post '/users' do
   user = User.create(params[:user])
 
   if user.save
