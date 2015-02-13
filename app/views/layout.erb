@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/css/normalize.css">
 
   <link rel="stylesheet" href="/css/application.css">
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400italic,400' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -16,10 +16,10 @@
   <header>
     <%= erb :_header, :layout => false %>
   </header>
+  <% if current_user %>
+    <%= erb :_navigation, :layout=> false %>
+  <% end %>
   <div id="content">
-    <% if current_user %>
-      <%= :_navigation, :layout: false %>
-    <% end %>
   <%= yield %>
   </div>
 </body>
