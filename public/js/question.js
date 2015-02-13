@@ -1,5 +1,5 @@
 function Question(params){
-  this.id = params.id
+  this.id = params.id;
   this.survey_id = params.survey_id;
   this.title = params.title;
 }
@@ -10,7 +10,7 @@ Question.prototype.toJson() {
 
 Question.prototype.create() {
   $.ajax({
-    type : 'put',
+    type : 'post',
     url  : "/surveys/" + this.survey_id + "/questions/create",
     data : { survey_id: this.survey_id,
              title: this.title };
