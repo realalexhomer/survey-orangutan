@@ -28,7 +28,7 @@ end
 
 (NUM_OPTIONS).times do
   Option.create(
-    answer: Faker::Lorem.word,
+    answer_text: Faker::Lorem.word,
     question_id: rand(1..NUM_QUESTIONS)
     )
 end
