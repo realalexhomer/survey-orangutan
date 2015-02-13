@@ -5,3 +5,9 @@ def current_user
     return nil
   end
 end
+
+def check_for_user
+  if !current_user
+    redirect '/'
+  end
+end
