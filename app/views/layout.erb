@@ -13,10 +13,14 @@
   <title></title>
 </head>
 <body>
-<div id="content">
   <header>
+    <%= erb :_header, :layout => false %>
   </header>
+  <div id="content">
+    <% if current_user %>
+      <%= :_navigation, :layout: false %>
+    <% end %>
   <%= yield %>
-</div>
+  </div>
 </body>
 </html>

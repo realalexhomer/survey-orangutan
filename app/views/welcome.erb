@@ -1,1 +1,35 @@
-Welcome to my site!
+<div class='login'>
+  <div class='form-content'>
+    <form action="/login" method="post">
+      <div class='hr-input-field'>
+        <label>username</label>
+        <input type='text' name='name' />
+      </div>
+      <div class='hr-input-field'>
+        <label>password</label>
+        <input type='password' name="password" />
+      </div>
+      <div class='actions'>
+        <input class='btn' type='submit' value='login'/>
+      </div>
+    </form>
+  </div>
+</div>
+<div class = 'signup'>
+  <div class='form-content'>
+    <form action="/users/create" method="post">
+      <div class='hr-input-field'>
+        <label>your username</label>
+        <input type='text' name='name' />
+      </div>
+      <div class='hr-input-field'>
+        <label>your email</label>
+        <input type='text' name='email' />
+      </div>
+      <div class='hr-input-field'>
+        <label>your password</label>
+        <input type='password' name='password' />
+      </div>
+    </form>
+  </div>
+</div>
