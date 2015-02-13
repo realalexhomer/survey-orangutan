@@ -7,8 +7,12 @@ get '/' do
 end
 
 get '/surveys' do
-  @surveys = Survey.all
-  erb :'survey/index'
+  if current_user
+    @surveys = Survey.all
+    erb :'survey/index'
+  else
+    redirect '/'
+  end
 end
 
 # New survey
