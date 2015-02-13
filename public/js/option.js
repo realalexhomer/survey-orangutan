@@ -18,7 +18,5 @@ Survey.prototype.create = function() {
              answer_text: this.answer_text,
              question_id: this.question_id,
             };
-    success: function(){console.log("option created"); };
-    error: function(){console.log("something went wrong");}
   })
 }
