@@ -55,6 +55,13 @@ post '/surveys.json' do
   survey.to_json
 end
 
+post 'surveys/:id/questions.json' do
+  content_type :json
+  question = Question.create(params[:question])
+  question.to_json
+end
+
+
 
 
 

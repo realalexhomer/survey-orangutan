@@ -7,9 +7,6 @@ function Survey(params) {
   this.name = params.name;
 }
 
-// Survey.protoype.toJson = function() {
-//   return JSON.stringify( { id: this.id, user_id: this.user_id, name: this.name} );
-// }
 
 Survey.create = function(params) {
   $.ajax({
@@ -19,6 +16,7 @@ Survey.create = function(params) {
     success: function(data){
       var obj = new Survey(data)
       Surveys.push(obj)
+      console.log('hi')
     },
     error: function(){console.log("something went wrong");}
   })
