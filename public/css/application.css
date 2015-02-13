@@ -1,6 +1,85 @@
 /* CSS declarations go here */
-body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
+
+/*Header stuff */
+
+header {
+    margin: 0 auto;
+    padding: 0px;
+    padding: 10px;
+    height: 120px;
+    background-color: #f39c12;
+    font-size: 90px;
+    text-align: center;
+    border-bottom: 10px solid #e67e22;
+    color: #ecf0f1;
+
+}
+
+
+.header_text {
+    font-family: 'Raleway', sans-serif;
+    color: #ecf0f1;
+    top: 30px;
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+}
+
+.header_logo {
+    display:inline-block;
+    height: 100px;
+    top: 10px;
+    position: relative;
+}
+
+/* nav bar */
+#logout {
+    float: right;
+}
+
+#make-survey {
+    float: left;}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  background: #3498db;
+}
+
+.nav-container {
+    width:50%;
+    margin: 0 auto;
+    background-color: #3498db;
+}
+.nav ul {
+  list-style: none;
+  background-color: #3498db;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+.nav li {
+  display: table-cell;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+  padding: 5px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+
+
+
+body {font-family: Raleway; font-size: 160%; line-height: 160%; }
+h1, h2, h3, h4, h5, h6 {font-family: Raleway; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
 h3 {font-size: 1.4em;}
@@ -41,27 +120,9 @@ a:visited {
 
 a:hover {
     color: #000;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .logo {
   height: 2em;
-}
-
-code {
-    font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    padding: 0px 3px;
-    display: inline-block;
-    color: #52595d;
-    background-color: #E8F2F5;
-    font-size: 40%;
-    line-height: 1.4em;
-    margin-left: -1em;
-    overflow: auto;
 }
