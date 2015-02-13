@@ -12,6 +12,7 @@ end
 post '/users' do
   user = User.create(params[:user])
 
+
   if user.save
     session[:user_id] = user.id
     redirect "/"
