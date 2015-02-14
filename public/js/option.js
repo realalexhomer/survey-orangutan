@@ -25,10 +25,10 @@ Option.create = function(params) {
     url  : "/options.json",
     data : params,
   }).done(function(data){
-    var obj = new Option(data)
-    Options.push(obj)
+    var recent_option = new Option(data)
+    Options.push(recent_option)
     $('.create_options').replaceWith(
-      "<p class='option-answer-text'>" + obj.answer_text + "</p>" +
+      "<p class='option-answer-text'>" + recent_option.answer_text + "</p>" +
       "<div id='finish_or_continue'>" +
         "<div id='add_option'>add option</div>" +
         "<div id='add_question'>add question</div>" +
@@ -36,8 +36,8 @@ Option.create = function(params) {
       "</div>"
       )
     $('#add_option').click(function() {
-      obj = Surveys[Surveys.length - 1];
-      $('#finish_or_continue').replaceWith(OptionForm(obj))
+      // obj = Surveys[Surveys.length - 1];
+      $('#finish_or_continue').replaceWith(OptionForm(Recent_question))
 
       $('.create_options').submit(function(event) {
         event.preventDefault();
@@ -48,7 +48,7 @@ Option.create = function(params) {
     })
     $('#add_question').click(function(){
       obj = Questions[Questions.length - 1]
-      $('#finish_or_continue').replaceWith(QuestionForm(obj))
+      $('#finish_or_continue').replaceWith(QuestionForm(Recent_survey))
 
       $('.create_questions').submit(function(event) {
         event.preventDefault();

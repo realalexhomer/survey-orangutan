@@ -1,3 +1,8 @@
+
+var Answers = []
+
+$(document).ready(function() {
+
 function Answer(params) {
   this.id = params.id;
   this.user_id = params.user_id;
@@ -6,21 +11,29 @@ function Answer(params) {
   this.option_id = params.option_id
 }
 
-Survey.protoype.toJson = function() {
-  return JSON.stringify( {  id: this.id, user_id: this.user_id, survey_id: this.survey_id,
-                            question_id: this.question_id, option_id: this.option_id} );
-}
+$('.take-survey').submit(function(event) {
+  event.preventDefault();
+  var formContent = $(this).serialize()
+  Answer.create(formContent)
+})
 
-Survey.prototype.create = function() {
+
+Answer.create = function(params) {
   $.ajax({
     type : 'post',
-    url  : "surveys/" + this.survey_id + "/questions/" + this.question_id + "/answers/create",
-    data : { id: this.id,
-             user_id: this.user_id,
-             survey_id: this.survey_id,
-             question_id: this.question_id,
-             option_id: this.option_id};
-    success: function(){console.log("answer created"); };
-    error: function(){console.log("something went wrong");}
+    url  : "/answers.json",
+    data : params,
+  }).done(function(data){
+    RecentAnswer = new Answer(data)
+    Answers.push(RecentAnswer)
+    var div_to_kill = '#' + data.question_id
+    console.log(div_to_kill)
+    $(div_to_kill).remove();
+    if ($('.take-survey').length < 1) {
+      window.location.href = "/"
+    }
   })
 }
+
+
+});

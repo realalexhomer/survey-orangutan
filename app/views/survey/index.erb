@@ -2,16 +2,12 @@
   <% @surveys.each do |survey| %>
     <div class="survey">
       <div class='name'>
-        <%= survey.name %>
+        <p class= "survey-index-name"><%= survey.name %></p>
+        <a  class='btn' href='/surveys/<%= survey.id %>'>take this survey</a>
+        <a  class='btn' href='/users/<%= survey.user_id %>'>more surveys by this user</a>
       </div>
-      <div class='actions'>
-        <div class='btn-container'>
-          <a  class='btn' href='/surveys/<%= survey.id %>'>take this survey</a>
+        <div class='user'>
         </div>
-        <div class='btn-container'>
-          <a  class='btn' href='/users/<%= survey.user_id %>'>more surveys by this user</a>
-        </div>
-      </div>
     </div>
   <%end%>
 </div>
