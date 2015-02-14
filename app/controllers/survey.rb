@@ -38,6 +38,7 @@ get '/surveys/:id' do |id|
     redirect '/'
   end
   @survey = Survey.find(id)
+  @Questions = "."
   erb :'survey/show', locals: {survey: @survey}
 end
 
@@ -56,6 +57,10 @@ end
 delete '/surveys/:id' do |id|
   Survey.find(id).destroy
   redirect "/surveys"
+end
+
+post '/surveys/:id/answer' do
+  UserAnswer.create(params[:UserAnswer])
 end
 
 #AJAX ROUTES ###########################################################
@@ -78,5 +83,10 @@ post '/options.json' do
   option.to_json
 end
 
+post '/answers.json' do
+  content_type :json
+  answer = UserAnswer.create(params[:answer])
+  answer.to_json
+end
 
 

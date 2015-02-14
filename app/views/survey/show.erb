@@ -1,0 +1,14 @@
+<h1><%=@survey.name%></h1>
+<% @survey.questions.each do |question| %>
+  <form class="take-survey" id="<%=question.id%>"method="post" action="/answers.json">
+    <input type="hidden" name="answer[user_id]" value="<%=current_user.id%>">
+    <input type="hidden" name="answer[survey_id" value="<%=@survey.id%>">
+    <input type="hidden" name="answer[question_id]" value="<%=question.id%>">
+    <h3 class ="question-display"><%= question.title %></h3>
+    <% question.options.each do |option| %>
+      <p class ="options display"><%=option.answer_text%></p><br>
+      <input type="radio" name="answer[option_id]" value="<%=option.id%>"><br>
+    <% end %>
+    <input type="submit" value="submit your answer">
+  </form>
+<% end %>

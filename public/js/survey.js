@@ -12,17 +12,12 @@ Survey.create = function(params) {
     type : 'post',
     url  : "/surveys.json",
     data : params,
-    // success: function(data){
-    //   var obj = new Survey(data)
-    //   Surveys.push(obj)
-    // },
-    // error: function(){console.log("something went wrong");}
   }).done(function(data){
-    var obj = new Survey(data)
-    Surveys.push(obj)
+    Recent_survey = new Survey(data)
+    Surveys.push(Recent_survey)
     $('.create_surveys').replaceWith(
-      QuestionHTML(obj) +
-      QuestionForm(obj)
+      QuestionHTML(Recent_survey) +
+      QuestionForm(Recent_survey)
       )
   $('.create_questions').submit(function(event) {
       event.preventDefault();

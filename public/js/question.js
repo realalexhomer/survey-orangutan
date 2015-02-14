@@ -21,11 +21,11 @@ Question.create = function(params){
     url  : "/questions.json",
     data : params,
   }).done(function(data){
-    var obj = new Question(data)
-    Questions.push(obj)
+    Recent_question = new Question(data)
+    Questions.push(Recent_question)
     $('.create_questions').replaceWith(
-      OptionHTML(obj) +
-      OptionForm(obj)
+      OptionHTML(Recent_question) +
+      OptionForm(Recent_question)
       )
       $('.create_options').submit(function(event) {
         event.preventDefault();

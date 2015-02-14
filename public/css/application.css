@@ -1,7 +1,9 @@
 /* CSS declarations go here */
 
 /*Header stuff */
-
+body {
+  background-color: #e67e22;
+}
 header {
     margin: 0 auto;
     padding: 0px;
@@ -15,6 +17,9 @@ header {
 
 }
 
+.content {
+  background: #ecf0f1;
+}
 
 .header_text {
     font-family: 'Raleway', sans-serif;
@@ -33,25 +38,35 @@ header {
 }
 
 /* nav bar */
+
 #logout {
     float: right;
+    text-align: right;
+/*    border: 3px solid green;*/
+    clear: both;
+    align: right;
 }
 
 #make-survey {
-    float: left;}
+    float: left;
+}
 
 .nav {
   margin: 0;
   padding: 0;
   background: #3498db;
+/*  border: 3px solid red;*/
 }
 
 .nav-container {
+    width: 960px;
     width:50%;
     margin: 0 auto;
     background-color: #3498db;
+/*    border: 3px solid blue;*/
 }
 .nav ul {
+  width: 960px;
   list-style: none;
   background-color: #3498db;
   text-align: center;
@@ -75,7 +90,30 @@ header {
   display: block;
   transition: .3s background-color;
 }
+/* Survey Index     */
 
+.survey {
+    background-color: #f39c12;
+}
+.survey-index-name{
+  color: #ecf0f1;
+  display: inline-block;
+  font-size: 150%;
+}
+.name {
+  margin: 10px;
+  text-align: center;
+}
+.take {
+  background-color: #2980b9;
+}
+.btn {
+  display: inline-block;
+  color: #ecf0f1;
+}
+
+
+/* */
 
 
 body {font-family: Raleway; font-size: 160%; line-height: 160%; }
@@ -89,7 +127,7 @@ h6 {font-size: 1.1em;}
 p, pre, blockquote, table, ul, ol, dl {margin-top: .5em; margin-bottom: .5em;}
 ul ul, ul ol, ol ol, ol ul {margin-top: 0.5em; margin-bottom: 0.5em;}
 li {margin: 0.3em auto;}
-ul {margin-left: .5em; padding-left: 0.5em;}
+ul {margin-left: .5em; padding-left: 0.5em;}*/
 dt {font-weight: bold;}
 img {border: none;}
 pre {border-left: 1px solid #ccc; margin-left: 0em; padding-left: 0.5em;}
