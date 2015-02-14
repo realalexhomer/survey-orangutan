@@ -21,13 +21,8 @@ Survey.create = function(params) {
     var obj = new Survey(data)
     Surveys.push(obj)
     $('.create_surveys').replaceWith(
-      "<h1 class='survey-name'>" + obj.name + "</h1>" +
-      "<form class='create_questions' action='/questions.json' method='post'>" +
-        "<input type='hidden' name= 'question[survey_id]' value='" + obj.id +"'>" +
-        "<label>Name Your Question</label>" +
-        "<input type='text' name='question[title]' />" +
-        "<input type='submit' value='create your question' />" +
-      "</form>"
+      QuestionHTML(obj) +
+      QuestionForm(obj)
       )
   $('.create_questions').submit(function(event) {
       event.preventDefault();
