@@ -13,8 +13,17 @@ end
 
 # NON AJAX ROUTES #####################################################
 
-get '/surveys/new' do
-  check_for_user
+# get '/surveys/new' do
+#   unless check_for_user
+#     redirect '/'
+#   end
+#   erb :'survey/new'
+# end
+
+get '/users/:id/surveys/new' do
+  unless check_for_user
+    redirect '/'
+  end
   erb :'survey/new'
 end
 
@@ -25,7 +34,9 @@ end
 
 # Existing survey
 get '/surveys/:id' do |id|
-  check_for_user
+  unless check_for_user
+    redirect '/'
+  end
   @survey = Survey.find(id)
   erb :'survey/show', locals: {survey: @survey}
 end
@@ -55,7 +66,17 @@ post '/surveys.json' do
   survey.to_json
 end
 
+post '/questions.json' do
+  content_type :json
+  question = Question.create(params[:question])
+  question.to_json
+end
 
+post '/options.json' do
+  content_type :json
+  option = Option.create(params[:option])
+  option.to_json
+end
 
 
 

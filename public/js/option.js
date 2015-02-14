@@ -1,3 +1,5 @@
+Options = []
+
 function Option(params) {
   this.id = params.id;
   this.question_id = params.question_id;
@@ -9,10 +11,16 @@ function Option(params) {
 //                             answer_text: this.answer_text} );
 // }
 
-Survey.prototype.create = function(params) {
+Option.create = function(params) {
   $.ajax({
     type : 'post',
-    url  : "/questions/" + this.question_id + "/options/create",
-    data : params
+    url  : "/options.json",
+    data : params,
+  }).done(function(data){
+    var obj = new Option(data)
+    Options.push(obj)
+    $('.create_options').replaceWith(
+      "<p class='option-answer-text'>" + obj.answer_text + "</p>"
+      )
   })
 }

@@ -7,7 +7,5 @@ def current_user
 end
 
 def check_for_user
-  if !current_user
-    redirect '/'
-  end
+  current_user
 end
