@@ -13,12 +13,6 @@ end
 
 # NON AJAX ROUTES #####################################################
 
-# get '/surveys/new' do
-#   unless check_for_user
-#     redirect '/'
-#   end
-#   erb :'survey/new'
-# end
 
 get '/users/:id/surveys/new' do
   unless check_for_user

@@ -17,9 +17,26 @@ header {
 
 }
 
+/* Welcome */
+
+.login {
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  background-color: #3498db;
+
+}
+
+.signup {
+  background-color: #16a085;
+  padding: 10px;
+}
+
 .content {
   background: #ecf0f1;
 }
+
+/* Header */
 
 .header_text {
     font-family: 'Raleway', sans-serif;
@@ -43,7 +60,6 @@ header {
     float: right;
     text-align: right;
 /*    border: 3px solid green;*/
-    clear: both;
     align: right;
 }
 
@@ -66,6 +82,7 @@ header {
 /*    border: 3px solid blue;*/
 }
 .nav ul {
+  display: inline-block;
   width: 960px;
   list-style: none;
   background-color: #3498db;
@@ -80,17 +97,17 @@ header {
   font-size: 1.2em;
   line-height: 40px;
   height: 40px;
-  border-bottom: 1px solid #888;
   padding: 5px;
+  display: inline-block;
 }
 
 .nav a {
   text-decoration: none;
   color: #fff;
-  display: block;
   transition: .3s background-color;
 }
-/* Survey Index     */
+
+/* Survey Index*/
 
 .survey {
     background-color: #f39c12;
@@ -109,11 +126,10 @@ header {
 }
 .btn {
   display: inline-block;
-  color: #ecf0f1;
 }
 
 
-/* */
+
 
 
 body {font-family: Raleway; font-size: 160%; line-height: 160%; }
@@ -126,8 +142,7 @@ h5 {font-size: 1.2em;}
 h6 {font-size: 1.1em;}
 p, pre, blockquote, table, ul, ol, dl {margin-top: .5em; margin-bottom: .5em;}
 ul ul, ul ol, ol ol, ol ul {margin-top: 0.5em; margin-bottom: 0.5em;}
-li {margin: 0.3em auto;}
-ul {margin-left: .5em; padding-left: 0.5em;}*/
+ul {list-style-type: none;}
 dt {font-weight: bold;}
 img {border: none;}
 pre {border-left: 1px solid #ccc; margin-left: 0em; padding-left: 0.5em;}
@@ -153,7 +168,7 @@ a {
 }
 
 a:visited {
-    color: #AAA;
+
 }
 
 a:hover {
