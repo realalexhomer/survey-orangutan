@@ -17,6 +17,22 @@ header {
 
 }
 
+/* Survey creator headings */
+
+.survey-name {
+    color: white;
+    font-style: normal;
+}
+
+.question-name {
+    margin-left: 10px;
+    color: white;
+    font-style: normal;
+}
+
+.option-answer-text{
+    margin-left: 20px;
+}
 /* Welcome */
 
 .login {

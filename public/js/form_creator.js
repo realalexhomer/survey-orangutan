@@ -6,10 +6,5 @@ $(document).ready(function() {
     Survey.create(formContent)
   });
 
-  // $('.create_questions').submit(function(event) {
-  //     event.preventDefault();
-  //     var formContent = $(this).serialize()
-  //     Question.create(formContent)
-
 });
 
