@@ -14,10 +14,6 @@ function Option(params) {
   this.answer_text = params.answer_text;
 }
 
-// Survey.protoype.toJson = function() {
-//   return JSON.stringify( {  id: this.id, question_id: this.question_id,
-//                             answer_text: this.answer_text} );
-// }
 
 Option.create = function(params) {
   $.ajax({
@@ -58,7 +54,7 @@ Option.create = function(params) {
 
     })
     $('#publish_survey').click(function(){
-      console.log('something should happen here')
+      window.location.href = "/surveys"
     })
 
     })
